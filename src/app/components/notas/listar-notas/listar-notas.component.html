@@ -1,0 +1,18 @@
+<section class="row gap-3">
+  <h1>Minhas Notas</h1>
+
+  <div>
+    <button routerLink="/notas/criar" class="btn btn-lg btn-outline-primary mb-4 rounded-4">
+      <i class="bi bi-plus-circle"></i>
+      Criar Nota
+    </button>
+  </div>
+
+  <app-filtrar-por-categoria class="mb-3" [categorias]="categorias" (onFiltroSelecionado)="filtrarNotasPorCategoria($event)"></app-filtrar-por-categoria>
+
+  <div class="row g-3">
+    <div *ngFor="let nota of notas" class="col-sm col-md-6 col-lg-3">
+      <app-nota [nota]="nota"></app-nota>
+    </div>
+  </div>
+</section>

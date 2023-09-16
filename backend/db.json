@@ -1,0 +1,100 @@
+{
+  "categorias": [
+    {
+      "id": 2,
+      "titulo": "Mercado"
+    },
+    {
+      "id": 3,
+      "titulo": "Trabalho"
+    },
+    {
+      "titulo": "Testes HTTP na Aula",
+      "id": 4
+    },
+    {
+      "titulo": "Lazer",
+      "id": 5
+    },
+    {
+      "titulo": "teste",
+      "id": 6
+    },
+    {
+      "titulo": "teste2",
+      "id": 7
+    }
+  ],
+  "notas": [
+    {
+      "id": 1,
+      "titulo": "teste",
+      "conteudo": "sdfdf",
+      "tema": "dark",
+      "categoria": {
+        "id": 3,
+        "titulo": "Trabalho"
+      }
+    },
+    {
+      "id": 2,
+      "titulo": "rwasrw1",
+      "conteudo": "sadas",
+      "tema": "dark",
+      "categoria": {
+        "titulo": "Lazer",
+        "id": 5
+      }
+    },
+    {
+      "id": 4,
+      "titulo": "teste4",
+      "conteudo": "sdfasfd",
+      "tema": "dark",
+      "categoria": {
+        "titulo": "teste",
+        "id": 6
+      }
+    },
+    {
+      "id": 5,
+      "titulo": "teste5",
+      "conteudo": "asdgfsdaf",
+      "tema": "dark",
+      "categoria": {
+        "titulo": "Testes HTTP na Aula",
+        "id": 4
+      }
+    },
+    {
+      "id": 6,
+      "titulo": "teste6",
+      "conteudo": "adfasd",
+      "tema": "dark",
+      "categoria": {
+        "titulo": "teste",
+        "id": 6
+      }
+    },
+    {
+      "id": 7,
+      "titulo": "dfgsf",
+      "conteudo": "dgsfdgdsfg",
+      "tema": "dark",
+      "categoria": {
+        "id": 3,
+        "titulo": "Trabalho"
+      }
+    },
+    {
+      "id": 8,
+      "titulo": "dfsdfg",
+      "conteudo": "dsfgsfdg",
+      "tema": "dark",
+      "categoria": {
+        "id": 2,
+        "titulo": "Mercado"
+      }
+    }
+  ]
+}
