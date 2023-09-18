@@ -22,7 +22,7 @@ export class CriarNotaComponent implements OnInit{
     private router: Router,
     private toastrService: ToastrService
   ) {
-    this.nota = new Nota('', '', 'dark', 0);
+    this.nota = new Nota('', '', 'dark', false, 0);
     this.categorias = [];
   }
   ngOnInit(): void {

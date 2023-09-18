@@ -1,53 +1,53 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Nota } from 'src/app/models/nota';
-import { NotaService } from '../../../services/nota.service';
+import { Component, OnInit } from '@angular/core';
 import { Categoria } from 'src/app/models/categoria';
+import { Nota } from 'src/app/models/nota';
 import { CategoriaService } from 'src/app/services/categoria.service';
+import { NotaService } from 'src/app/services/nota.service';
 
 @Component({
-  selector: 'app-listar-notas',
-  templateUrl: './listar-notas.component.html',
-  styleUrls: ['./listar-notas.component.css'],
+  selector: 'app-listar-notas-arquivadas',
+  templateUrl: './listar-notas-arquivadas.component.html',
+  styleUrls: ['./listar-notas-arquivadas.component.css']
 })
-export class ListarNotasComponent implements OnInit {
+export class ListarNotasArquivadasComponent implements OnInit {
   notas: Nota[];
   categorias: Categoria[];
 
   constructor(private notaService: NotaService, private categoriaService: CategoriaService) {
     this.notas = [];
     this.categorias = [];
-   }
-
-   ngOnInit(): void {
-    this.selecionarTodasNotas()
+  }
+  
+  ngOnInit(): void {
+    this.selecionarNotasArquivadas()
      
     this.categoriaService.selecionarTodos().subscribe((categorias) => {
       this.categorias = categorias;
     });
-   }
-  
-  transferirParaArquivadas(nota: Nota) {
-    nota.arquivada = true;
+  }
+
+  transferirParaDesarquivadas(nota: Nota) {
+    nota.arquivada = false;
     this.notaService.editar(nota).subscribe(() => { 
     });
   }
-  
+
   filtrarNotasPorCategoria(categoria: Categoria | null) {
     if (categoria === null) {
-      this.selecionarTodasNotas();
+      this.selecionarNotasArquivadas();
       return;
     }
 
-    this.selecionarNotasPorCategoria(categoria);
+    this.selecionarArquivadasNotasPorCategoria(categoria);
   }
-
-  selecionarTodasNotas() {
+  
+  selecionarNotasArquivadas() {
     this.notaService.selecionarTodos().subscribe((notas) => {
       this.notas = notas;
     })
   }
 
-  selecionarNotasPorCategoria(categoria: Categoria) {
+  selecionarArquivadasNotasPorCategoria(categoria: Categoria) {
     this.notaService.selecionarNotasPorCategoria(categoria).subscribe((notas) => {
       this.notas = notas;
     })

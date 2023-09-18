@@ -1,0 +1,13 @@
+<section class="row gap-3">
+  <h1>Notas Arquivadas</h1>
+
+  <app-filtrar-por-categoria class="mb-3" [categorias]="categorias" (onFiltroSelecionado)="filtrarNotasPorCategoria($event)"></app-filtrar-por-categoria>
+
+  <div class="row g-3">
+    <ng-container *ngFor="let nota of notas">
+      <div class="col-sm col-md-6 col-lg-3" *ngIf="nota.arquivada">
+        <app-card-nota-arquivada [nota]="nota" (desarquivarNota)="transferirParaDesarquivadas($event)"></app-card-nota-arquivada>
+      </div>
+    </ng-container>
+  </div>
+</section>

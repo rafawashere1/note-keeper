@@ -19,7 +19,7 @@ export class ExcluirNotaComponent implements OnInit {
     private router: Router,
     private toastService: ToastrService
   ) {
-    this.nota = new Nota('', '', 'dark', 0);
+    this.nota = new Nota('', '', 'dark', false, 0);
   }
 
   ngOnInit(): void {
@@ -31,8 +31,8 @@ export class ExcluirNotaComponent implements OnInit {
   }
 
   excluirNota() {
-    this.notaService.excluir(this.nota).subscribe((notaExcluida) => {
-      this.toastService.success(`Nota ${notaExcluida.titulo} excluída com sucesso.`, 'Sucesso');
+    this.notaService.excluir(this.nota).subscribe(() => {
+      this.toastService.success(`Nota excluída com sucesso.`, 'Sucesso');
 
       this.router.navigate(['/notas', 'listar']);
     });
