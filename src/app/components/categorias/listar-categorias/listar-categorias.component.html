@@ -2,7 +2,10 @@
   <h1 class="col-md-12 text-center">Minhas Categorias</h1>
 
   <div class="col-md-12 text-center">
-    <button routerLink="/categorias/criar" class="btn btn-lg btn-outline-primary mb-4 rounded-4">
+    <button
+      routerLink="/categorias/criar"
+      class="btn btn-lg btn-outline-primary mb-4 rounded-4"
+    >
       <i class="bi bi-plus-circle"></i>
       Criar Categoria
     </button>
@@ -23,8 +26,20 @@
             <th class="text-center" scope="row">{{ categoria.id }}</th>
             <td class="text-center">{{ categoria.titulo }}</td>
             <td class="text-center">
-              <a class="text-decoration-none me-2" routerLink="/categorias/editar/{{ categoria.id }}">Editar</a>
-              <a class="text-decoration-none" routerLink="/categorias/excluir/{{ categoria.id }}">Excluir</a>
+              <a
+                class="text-decoration-none me-2"
+                routerLink="/categorias/editar/{{ categoria.id }}"
+              >
+                <button class="btn btn-primary" aria-label="Editar" ngbTooltip="Editar" placement="top"><i class="bi bi-pencil"></i></button>
+              </a>
+              <a
+                class="text-decoration-none"
+                routerLink="/categorias/excluir/{{ categoria.id }}"
+              >
+                <button class="btn btn-danger" aria-label="Excluir" ngbTooltip="Excluir" placement="top">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </a>
             </td>
           </tr>
         </tbody>

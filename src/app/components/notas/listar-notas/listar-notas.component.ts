@@ -3,6 +3,7 @@ import { Nota } from 'src/app/models/nota';
 import { NotaService } from '../../../services/nota.service';
 import { Categoria } from 'src/app/models/categoria';
 import { CategoriaService } from 'src/app/services/categoria.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-listar-notas',
@@ -13,7 +14,7 @@ export class ListarNotasComponent implements OnInit {
   notas: Nota[];
   categorias: Categoria[];
 
-  constructor(private notaService: NotaService, private categoriaService: CategoriaService) {
+  constructor(private notaService: NotaService, private categoriaService: CategoriaService, private toastrService: ToastrService) {
     this.notas = [];
     this.categorias = [];
    }
@@ -26,9 +27,12 @@ export class ListarNotasComponent implements OnInit {
     });
    }
   
-  transferirParaArquivadas(nota: Nota) {
+   transferirParaArquivadas(nota: Nota) {
     nota.arquivada = true;
-    this.notaService.editar(nota).subscribe(() => { 
+    this.notaService.editar(nota).subscribe(() => {
+      this.toastrService.info(`Nota ${nota.titulo} arquivada`, '', {
+        positionClass: 'toast-bottom-right'
+      });
     });
   }
   

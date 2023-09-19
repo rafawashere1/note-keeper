@@ -1,6 +1,10 @@
 {
   "categorias": [
     {
+      "titulo": "Lazer",
+      "id": 1
+    },
+    {
       "id": 2,
       "titulo": "Mercado"
     },
@@ -11,40 +15,17 @@
     {
       "titulo": "Testes HTTP na Aula",
       "id": 4
-    },
-    {
-      "titulo": "Lazer",
-      "id": 5
-    },
-    {
-      "titulo": "teste",
-      "id": 6
-    },
-    {
-      "titulo": "teste2",
-      "id": 7
     }
   ],
   "notas": [
     {
       "id": 1,
-      "titulo": "teste",
-      "conteudo": "123",
-      "tema": "dark",
-      "categoria": {
-        "id": 3,
-        "titulo": "Trabalho"
-      },
-      "arquivada": true
-    },
-    {
-      "id": 2,
-      "titulo": "rwarew",
-      "conteudo": "SADasd",
+      "titulo": "Lavar o cachorro 🦮",
+      "conteudo": "Pegar o shampoo > pegar a toalha",
       "tema": "warning",
       "categoria": {
-        "titulo": "Testes HTTP na Aula",
-        "id": 4
+        "titulo": "Lazer",
+        "id": 1
       },
       "arquivada": false
     }

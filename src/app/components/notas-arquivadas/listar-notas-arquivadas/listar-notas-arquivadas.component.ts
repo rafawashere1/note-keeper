@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Categoria } from 'src/app/models/categoria';
 import { Nota } from 'src/app/models/nota';
 import { CategoriaService } from 'src/app/services/categoria.service';
@@ -13,7 +14,7 @@ export class ListarNotasArquivadasComponent implements OnInit {
   notas: Nota[];
   categorias: Categoria[];
 
-  constructor(private notaService: NotaService, private categoriaService: CategoriaService) {
+  constructor(private notaService: NotaService, private categoriaService: CategoriaService, private toastrService: ToastrService) {
     this.notas = [];
     this.categorias = [];
   }
@@ -28,7 +29,10 @@ export class ListarNotasArquivadasComponent implements OnInit {
 
   transferirParaDesarquivadas(nota: Nota) {
     nota.arquivada = false;
-    this.notaService.editar(nota).subscribe(() => { 
+    this.notaService.editar(nota).subscribe(() => {
+      this.toastrService.info(`Nota ${nota.titulo} desarquivada`, '', {
+        positionClass: 'toast-bottom-right'
+      });
     });
   }
 

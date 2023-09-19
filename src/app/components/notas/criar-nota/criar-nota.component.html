@@ -21,11 +21,11 @@
       <div class="mb-3">
         <label for="categoria" class="form-label fs-5 fw-semibold">Categoria</label>
         <div class="position-relative">
-          <select [(ngModel)]="nota.categoria" class="form-select" id="categoria" name="categoria">
-            <option value="" disabled selected style="display:none;">Selecione uma categoria</option>
+          <select [(ngModel)]="nota.categoria" class="form-select" id="categoria" name="categoria" [disabled]="categorias.length === 0">
             <option *ngFor="let categoria of categorias" [ngValue]="categoria">{{ categoria.titulo }}</option>
           </select>
-          <span class="position-absolute top-50 start-0 translate-middle-y ms-2 text-muted" *ngIf="!nota.categoria">Selecione uma categoria</span>
+          <span class="position-absolute top-50 start-0 translate-middle-y ms-2 text-muted" *ngIf="!nota.categoria && categorias.length > 0">Selecione uma categoria</span>
+          <span class="position-absolute top-50 start-0 translate-middle-y ms-2 text-muted" *ngIf="categorias.length === 0">Não existem categorias cadastradas</span>
         </div>
       </div>
 
