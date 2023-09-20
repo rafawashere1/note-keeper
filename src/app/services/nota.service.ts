@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class NotaService {
 
-  private API_URL = environment.API_URL + "/api/notas";
+  private API_URL = environment.API_URL + "/api/notas/";
 
   constructor(private http: HttpClient) {
 

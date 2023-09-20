@@ -9,8 +9,8 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root', // App module
 })
 export class CategoriaService {
-  private API_URL = environment.API_URL + "/api/categorias";
-  private NOTAS_API_URL = environment.API_URL + "/api/notas";
+  private API_URL = environment.API_URL + "/api/categorias/";
+  private NOTAS_API_URL = environment.API_URL + "/api/notas/";
 
   constructor(private http: HttpClient) {
 
