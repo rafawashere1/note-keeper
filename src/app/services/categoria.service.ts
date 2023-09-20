@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, map, switchMap } from 'rxjs';
 import { Categoria } from '../models/categoria';
 import { Nota } from '../models/nota';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root', // App module
 })
 export class CategoriaService {
-  private API_URL = 'http://localhost:3000/categorias/';
-  private NOTAS_API_URL = 'http://localhost:3000/notas/';
+  private API_URL = environment.API_URL + "/api/categorias";
+  private NOTAS_API_URL = environment.API_URL + "/api/notas";
 
   constructor(private http: HttpClient) {
 

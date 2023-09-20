@@ -3,13 +3,14 @@ import { Nota } from '../models/nota';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Categoria } from '../models/categoria';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root', // App module
 })
 export class NotaService {
 
-  private API_URL = 'http://localhost:3000/notas/';
+  private API_URL = environment.API_URL + "/api/notas";
 
   constructor(private http: HttpClient) {
 

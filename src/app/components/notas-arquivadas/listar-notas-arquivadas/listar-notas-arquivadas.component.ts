@@ -42,7 +42,7 @@ export class ListarNotasArquivadasComponent implements OnInit {
       return;
     }
 
-    this.selecionarArquivadasNotasPorCategoria(categoria);
+    this.selecionarNotasArquivadasPorCategoria(categoria);
   }
   
   selecionarNotasArquivadas() {
@@ -51,7 +51,7 @@ export class ListarNotasArquivadasComponent implements OnInit {
     })
   }
 
-  selecionarArquivadasNotasPorCategoria(categoria: Categoria) {
+  selecionarNotasArquivadasPorCategoria(categoria: Categoria) {
     this.notaService.selecionarNotasPorCategoria(categoria).subscribe((notas) => {
       this.notas = notas;
     })
